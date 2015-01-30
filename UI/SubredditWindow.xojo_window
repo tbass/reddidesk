@@ -1,5 +1,5 @@
 #tag Window
-Begin Window Window1
+Begin Window SubredditWindow
    BackColor       =   &cFFFFFF00
    Backdrop        =   0
    CloseButton     =   True
@@ -9,14 +9,14 @@ Begin Window Window1
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   440
+   Height          =   362
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
    MaxHeight       =   32000
    MaximizeButton  =   True
    MaxWidth        =   32000
-   MenuBar         =   1001782148
+   MenuBar         =   0
    MenuBarVisible  =   True
    MinHeight       =   64
    MinimizeButton  =   True
@@ -25,60 +25,63 @@ Begin Window Window1
    Resizeable      =   True
    Title           =   "Untitled"
    Visible         =   True
-   Width           =   434
-   Begin TextArea TextArea1
-      AcceptTabs      =   False
-      Alignment       =   0
+   Width           =   725
+   Begin Listbox Listbox1
       AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   True
-      BackColor       =   &cFFFFFF00
+      AutoHideScrollbars=   True
       Bold            =   False
       Border          =   True
+      ColumnCount     =   1
+      ColumnsResizable=   True
+      ColumnWidths    =   ""
       DataField       =   ""
       DataSource      =   ""
+      DefaultRowHeight=   -1
       Enabled         =   True
-      Format          =   ""
-      Height          =   251
+      EnableDrag      =   False
+      EnableDragReorder=   False
+      GridLinesHorizontal=   0
+      GridLinesVertical=   0
+      HasHeading      =   False
+      HeadingIndex    =   -1
+      Height          =   106
       HelpTag         =   ""
-      HideSelection   =   True
+      Hierarchical    =   False
       Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   ""
       Italic          =   False
-      Left            =   20
-      LimitText       =   0
-      LineHeight      =   0.0
-      LineSpacing     =   1.0
+      Left            =   297
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
-      Multiline       =   True
-      ReadOnly        =   False
+      RequiresSelection=   False
       Scope           =   0
-      ScrollbarHorizontal=   False
-      ScrollbarVertical=   True
-      Styled          =   True
-      TabIndex        =   2
+      ScrollbarHorizontal=   True
+      ScrollBarVertical=   True
+      SelectionType   =   0
+      TabIndex        =   0
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   ""
-      TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   169
+      Top             =   236
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
-      Width           =   394
+      Width           =   408
+      _ScrollOffset   =   0
+      _ScrollWidth    =   -1
    End
-   Begin PushButton buttonGetUserInfo
+   Begin PushButton AboutButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   "0"
       Cancel          =   False
-      Caption         =   "Get user Info"
+      Caption         =   "About"
       Default         =   False
       Enabled         =   True
       Height          =   20
@@ -86,7 +89,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   306
+      Left            =   625
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -102,7 +105,7 @@ Begin Window Window1
       Top             =   20
       Underline       =   False
       Visible         =   True
-      Width           =   108
+      Width           =   80
    End
    Begin Label Label1
       AutoDeactivate  =   True
@@ -115,7 +118,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   20
+      Left            =   297
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -126,7 +129,7 @@ Begin Window Window1
       Selectable      =   False
       TabIndex        =   2
       TabPanelIndex   =   0
-      Text            =   "Username"
+      Text            =   "SubReddit name"
       TextAlign       =   0
       TextColor       =   &c00000000
       TextFont        =   "System"
@@ -136,9 +139,9 @@ Begin Window Window1
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   71
+      Width           =   100
    End
-   Begin TextField txtUsername
+   Begin TextField SRNameText
       AcceptTabs      =   False
       Alignment       =   0
       AutoDeactivate  =   True
@@ -155,7 +158,7 @@ Begin Window Window1
       HelpTag         =   ""
       Index           =   -2147483648
       Italic          =   False
-      Left            =   103
+      Left            =   409
       LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   False
@@ -166,7 +169,7 @@ Begin Window Window1
       Password        =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   0
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   ""
@@ -178,51 +181,60 @@ Begin Window Window1
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
-      Width           =   191
+      Width           =   204
    End
-   Begin CheckBox CheckBox1
+   Begin GroupBox GroupBox1
       AutoDeactivate  =   True
       Bold            =   False
-      Caption         =   "Gold member"
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   False
-      Height          =   20
+      Caption         =   "Untitled"
+      Enabled         =   True
+      Height          =   172
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   20
+      Left            =   297
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   0
-      State           =   0
       TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   68
+      Top             =   52
       Underline       =   False
-      Value           =   False
       Visible         =   True
-      Width           =   118
+      Width           =   408
    End
-   Begin CheckBox CheckBox2
+   Begin Listbox Listbox2
       AutoDeactivate  =   True
+      AutoHideScrollbars=   True
       Bold            =   False
-      Caption         =   "Moderator"
+      Border          =   True
+      ColumnCount     =   1
+      ColumnsResizable=   False
+      ColumnWidths    =   ""
       DataField       =   ""
       DataSource      =   ""
-      Enabled         =   False
-      Height          =   20
+      DefaultRowHeight=   -1
+      Enabled         =   True
+      EnableDrag      =   False
+      EnableDragReorder=   False
+      GridLinesHorizontal=   0
+      GridLinesVertical=   0
+      HasHeading      =   False
+      HeadingIndex    =   -1
+      Height          =   290
       HelpTag         =   ""
+      Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
+      InitialValue    =   ""
       Italic          =   False
       Left            =   20
       LockBottom      =   False
@@ -230,27 +242,33 @@ Begin Window Window1
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
+      RequiresSelection=   False
       Scope           =   0
-      State           =   0
+      ScrollbarHorizontal=   False
+      ScrollBarVertical=   True
+      SelectionType   =   0
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   100
+      Top             =   52
       Underline       =   False
-      Value           =   False
+      UseFocusRing    =   True
       Visible         =   True
-      Width           =   121
+      Width           =   265
+      _ScrollOffset   =   0
+      _ScrollWidth    =   -1
    End
-   Begin CheckBox CheckBox3
+   Begin PushButton PopularSRButton
       AutoDeactivate  =   True
       Bold            =   False
-      Caption         =   "EMail verified"
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Popular"
+      Default         =   False
+      Enabled         =   True
       Height          =   20
       HelpTag         =   ""
       Index           =   -2147483648
@@ -263,30 +281,31 @@ Begin Window Window1
       LockRight       =   False
       LockTop         =   True
       Scope           =   0
-      State           =   0
       TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   132
+      Top             =   20
       Underline       =   False
-      Value           =   False
       Visible         =   True
-      Width           =   100
+      Width           =   123
    End
-   Begin GroupBox groupKarma
+   Begin PushButton NewSRButton
       AutoDeactivate  =   True
       Bold            =   False
-      Caption         =   "Karma"
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "New"
+      Default         =   False
       Enabled         =   True
-      Height          =   105
+      Height          =   20
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   223
+      Left            =   162
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -299,225 +318,42 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   52
+      Top             =   20
       Underline       =   False
       Visible         =   True
-      Width           =   191
-      Begin Label Label2
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "groupKarma"
-         Italic          =   False
-         Left            =   243
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   0
-         TabPanelIndex   =   0
-         Text            =   "Link Karma"
-         TextAlign       =   2
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   80
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   100
-      End
-      Begin Label Label3
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "groupKarma"
-         Italic          =   False
-         Left            =   243
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   1
-         TabPanelIndex   =   0
-         Text            =   "Comment Karma"
-         TextAlign       =   2
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   115
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   100
-      End
-      Begin Label lblLinkKarma
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "groupKarma"
-         Italic          =   False
-         Left            =   362
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   2
-         TabPanelIndex   =   0
-         Text            =   "0"
-         TextAlign       =   1
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   80
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   32
-      End
-      Begin Label lblCommentKarma
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "groupKarma"
-         Italic          =   False
-         Left            =   362
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   3
-         TabPanelIndex   =   0
-         Text            =   "0"
-         TextAlign       =   1
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   115
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   32
-      End
+      Width           =   123
    End
 End
 #tag EndWindow
 
 #tag WindowCode
 	#tag Event
-		Sub Close()
-		  RemoveHandler ResultTimer.Action, AddressOf UIUpdate
-		  ResultTimer = nil
+		Sub Open()
+		  subreddi = new ReddiDeskSubreddits
+		  
 		End Sub
 	#tag EndEvent
 
 
-	#tag Method, Flags = &h1000
-		Sub Constructor()
-		  // Calling the overridden superclass constructor.
-		  Super.Constructor
-		  
-		  ReddiDeskInstance = new ReddiDesk
-		  
-		  
-		  ResultTimer = new Timer
-		  ResultTimer.Period = 500
-		  ResultTimer.Mode = Timer.ModeMultiple
-		  AddHandler ResultTimer.Action, AddressOf UIUpdate
-		  
-		  ' set defaults
-		  txtUsername.Text = "t0mt0m72"
-		  
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub UIUpdate(sender as Timer)
-		  if UserInfoLastUpdated <> ReddiDeskInstance.CurrentUserInfo.LastUpdate Then
-		    TextArea1.Text = ReddiDeskInstance.RawJsonString
-		    
-		    lblLinkKarma.Text = str(ReddiDeskInstance.CurrentUserInfo.LinkKarma)
-		    UserInfoLastUpdated = ReddiDeskInstance.CurrentUserInfo.LastUpdate
-		  end if
-		  
-		  
-		  
-		End Sub
-	#tag EndMethod
-
-
-	#tag Property, Flags = &h0
-		ReddiDeskInstance As ReddiDesk
-	#tag EndProperty
-
 	#tag Property, Flags = &h21
-		Private ResultTimer As Timer
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		UserInfoLastUpdated As Double = 0
+		Private subreddi As ReddiDeskSubreddits
 	#tag EndProperty
 
 
 #tag EndWindowCode
 
-#tag Events buttonGetUserInfo
+#tag Events AboutButton
 	#tag Event
 		Sub Action()
-		  ReddiDeskInstance.GetUserInfo(txtUsername.Text)
-		  
+		  Listbox1.AddRow subreddi.GetSRInformationRaw(SRNameText.Text).ToString
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events txtUsername
+#tag Events PopularSRButton
 	#tag Event
-		Function KeyDown(Key As String) As Boolean
-		  System.DebugLog asc(key).ToText
-		  Select case Asc(key)
-		  case 13
-		    buttonGetUserInfo.Push
-		  End
-		End Function
+		Sub Action()
+		  subreddi.GetAllSubredditsRaw("popular")
+		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
@@ -730,12 +566,6 @@ End
 		Group="Appearance"
 		InitialValue="Untitled"
 		Type="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="UserInfoLastUpdated"
-		Group="Behavior"
-		InitialValue="0"
-		Type="Double"
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Visible"

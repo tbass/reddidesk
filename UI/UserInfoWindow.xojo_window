@@ -1,5 +1,5 @@
 #tag Window
-Begin Window Window1
+Begin Window UserInfoWindow
    BackColor       =   &cFFFFFF00
    Backdrop        =   0
    CloseButton     =   True
@@ -9,12 +9,12 @@ Begin Window Window1
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   440
+   Height          =   276
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
    MaxHeight       =   32000
-   MaximizeButton  =   True
+   MaximizeButton  =   False
    MaxWidth        =   32000
    MenuBar         =   1001782148
    MenuBarVisible  =   True
@@ -22,11 +22,11 @@ Begin Window Window1
    MinimizeButton  =   True
    MinWidth        =   64
    Placement       =   0
-   Resizeable      =   True
-   Title           =   "Untitled"
+   Resizeable      =   False
+   Title           =   "User info"
    Visible         =   True
    Width           =   434
-   Begin TextArea TextArea1
+   Begin TextArea areaMessageLog
       AcceptTabs      =   False
       Alignment       =   0
       AutoDeactivate  =   True
@@ -38,7 +38,7 @@ Begin Window Window1
       DataSource      =   ""
       Enabled         =   True
       Format          =   ""
-      Height          =   251
+      Height          =   87
       HelpTag         =   ""
       HideSelection   =   True
       Index           =   -2147483648
@@ -67,7 +67,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   169
+      Top             =   164
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
@@ -457,7 +457,7 @@ End
 		  // Calling the overridden superclass constructor.
 		  Super.Constructor
 		  
-		  ReddiDeskInstance = new ReddiDesk
+		  ' ReddiDeskInstance = new ReddiDesk
 		  
 		  
 		  ResultTimer = new Timer
@@ -473,22 +473,21 @@ End
 
 	#tag Method, Flags = &h0
 		Sub UIUpdate(sender as Timer)
-		  if UserInfoLastUpdated <> ReddiDeskInstance.CurrentUserInfo.LastUpdate Then
-		    TextArea1.Text = ReddiDeskInstance.RawJsonString
-		    
-		    lblLinkKarma.Text = str(ReddiDeskInstance.CurrentUserInfo.LinkKarma)
-		    UserInfoLastUpdated = ReddiDeskInstance.CurrentUserInfo.LastUpdate
-		  end if
+		  'if UserInfoLastUpdated <> ReddiDeskInstance.CurrentUserInfo.LastUpdate Then
+		  'areaMessageLog.Text = ReddiDeskInstance.RawJsonString
+		  
+		  'lblLinkKarma.Text = str(ReddiDeskInstance.CurrentUserInfo.LinkKarma)
+		  'lblCommentKarma.Text = str(ReddiDeskInstance.CurrentUserInfo.CommentKarma)
+		  
+		  
+		  'UserInfoLastUpdated = ReddiDeskInstance.CurrentUserInfo.LastUpdate
+		  'end if
 		  
 		  
 		  
 		End Sub
 	#tag EndMethod
 
-
-	#tag Property, Flags = &h0
-		ReddiDeskInstance As ReddiDesk
-	#tag EndProperty
 
 	#tag Property, Flags = &h21
 		Private ResultTimer As Timer
@@ -504,8 +503,11 @@ End
 #tag Events buttonGetUserInfo
 	#tag Event
 		Sub Action()
-		  ReddiDeskInstance.GetUserInfo(txtUsername.Text)
-		  
+		  Try
+		    ' ReddiDeskInstance.GetUserInfo(txtUsername.Text)
+		  Catch exp as ReddiDeskException
+		    System.DebugLog exp.Message
+		  End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
