@@ -38,13 +38,13 @@ Protected Class ReddiDeskUsers
 		  
 		  Dim va as String
 		  ' va = me.Get(cBaseURL + "/user/" + Username + "/about.json", 0)
-		  ' 
+		  '
 		  ' if me.HTTPStatusCode = 200 Then
 		  ' me.FillUserStructure(va)
 		  ' Else
 		  ' Raise new ReddiDeskException(me.HttpStatusCode)
 		  ' End If
-		  ' 
+		  '
 		  ' System.DebugLog str(me.HTTPStatusCode)
 		  System.DebugLog va
 		End Sub

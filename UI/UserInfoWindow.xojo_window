@@ -514,7 +514,8 @@ End
 #tag Events txtUsername
 	#tag Event
 		Function KeyDown(Key As String) As Boolean
-		  System.DebugLog asc(key).ToText
+		  System.DebugLog str(asc(key))
+		  
 		  Select case Asc(key)
 		  case 13
 		    buttonGetUserInfo.Push

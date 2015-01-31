@@ -4,7 +4,7 @@ Protected Class ReddiDeskSubreddits
 		Sub GetAllSubredditsRaw(sortOrder as String)
 		  Dim conn As ReddiDeskConnection = ReddiDeskConnection.GetInstance
 		  
-		  ?count=1&after=t5_361kj
+		  ' ?count=1&after=t5_361kj
 		  dim data as String = conn.FetchData("get":"/subreddits/" + lowercase(sortOrder) + ".json")
 		  
 		  Dim base_item as new JSONItem(data)
